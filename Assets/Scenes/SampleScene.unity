@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 420542373}
   - component: {fileID: 420542372}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Unit
   m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,7 +534,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -740,6 +740,12 @@ MonoBehaviour:
   allUnits: {fileID: 1618475407}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
+  chosenCard: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
+  - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
+  - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
+  - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
 --- !u!114 &679658549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,8 +945,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 689894740}
-        m_TargetAssemblyTypeName: CardDrag, Assembly-CSharp
-        m_MethodName: changeMode
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: changeModeT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -997,11 +1003,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 689894735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526edde1497565d41885a8f17f1272fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cafcb1c05f6dbd4393b313d6e03bda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitToSpawn: {fileID: 0}
+  allUnits: {fileID: 0}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
+  chosenCard: {fileID: 689894735}
+  materials:
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
+  - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
+  - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
+  - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1166,12 @@ MonoBehaviour:
   allUnits: {fileID: 1618475407}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
+  chosenCard: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
+  - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
+  - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
+  - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
 --- !u!114 &816969189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,9 +1350,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689894740}
-        m_TargetAssemblyTypeName: CardDrag, Assembly-CSharp
-        m_MethodName: changeMode
+      - m_Target: {fileID: 849897857}
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: changeModeT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1389,11 +1409,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 849897852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526edde1497565d41885a8f17f1272fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cafcb1c05f6dbd4393b313d6e03bda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitToSpawn: {fileID: 0}
+  allUnits: {fileID: 0}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
+  chosenCard: {fileID: 849897852}
+  materials:
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
+  - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
+  - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
+  - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
 --- !u!1001 &937751699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1652,8 +1680,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1026162582}
-        m_TargetAssemblyTypeName: CardDrag, Assembly-CSharp
-        m_MethodName: changeMode
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: changeModeT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1710,11 +1738,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1026162577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526edde1497565d41885a8f17f1272fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cafcb1c05f6dbd4393b313d6e03bda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitToSpawn: {fileID: 0}
+  allUnits: {fileID: 0}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
+  chosenCard: {fileID: 1026162577}
+  materials:
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
+  - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
+  - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
+  - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
 --- !u!1 &1233657377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,9 +2005,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689894740}
-        m_TargetAssemblyTypeName: CardDrag, Assembly-CSharp
-        m_MethodName: changeMode
+      - m_Target: {fileID: 1850058477}
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: changeModeT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2028,11 +2064,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1850058472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526edde1497565d41885a8f17f1272fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cafcb1c05f6dbd4393b313d6e03bda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitToSpawn: {fileID: 0}
+  allUnits: {fileID: 0}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
+  chosenCard: {fileID: 1850058472}
+  materials:
+  - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
+  - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
+  - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
+  - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
 --- !u!1001 &2037221961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2197,7 +2241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1006744684425786106, guid: 9b55cf82e0f0bd445ae9eea6365703b1, type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Unit
       objectReference: {fileID: 0}
     - target: {fileID: 1006744684425786106, guid: 9b55cf82e0f0bd445ae9eea6365703b1, type: 3}
       propertyPath: m_IsActive
