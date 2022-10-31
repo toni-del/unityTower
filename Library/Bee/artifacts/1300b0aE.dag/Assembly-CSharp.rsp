@@ -354,10 +354,12 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/AI.cs"
 "Assets/Scripts/CardDrag.cs"
 "Assets/Scripts/LightRotator.cs"
 "Assets/Scripts/Mana.cs"
 "Assets/Scripts/Movement.cs"
+"Assets/Scripts/Stats.cs"
 "Assets/Scripts/UnitSpawner.cs"
 -langversion:9.0
 

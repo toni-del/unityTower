@@ -20,13 +20,13 @@ public class Movement : MonoBehaviour
             GameObject unit = allUnits.transform.GetChild(i).gameObject;
             if (unit.tag == "Ally")
             {
-                unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z + 1f * Time.deltaTime);
+                unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z + unit.GetComponent<Stats>().speed * Time.deltaTime);
                 //if (enemyTowerL != null)
                 //    if (unit.transform.position.z > 9) Destroy(enemyTowerL);
 
             } else
             {
-                unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - 1f * Time.deltaTime);
+                unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - unit.GetComponent<Stats>().speed * Time.deltaTime);
             }
         }
          

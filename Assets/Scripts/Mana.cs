@@ -9,7 +9,7 @@ public class Mana : MonoBehaviour
     public GameObject mana;
     private void Start()
     {
-        var couratine = StartCoroutine(ChangeMana());
+        var couratiner = StartCoroutine(ChangeMana());
     }
     IEnumerator ChangeMana()
     {
