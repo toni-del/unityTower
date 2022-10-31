@@ -20,19 +20,27 @@ public class UnitSpawner : MonoBehaviour
     }
     public void SpawnUnitLeft()
     {
-        GameObject newUnit = Instantiate(unitToSpawn, new Vector3(-5, 1, -9), Quaternion.identity);
-        newUnit.transform.SetParent(allUnits.transform);
-        newUnit = modifiedUnit(newUnit);
-        newUnit.SetActive(true);
-        changeModeF();
+        if (Mana.timeStart >= 3)
+        {
+            GameObject newUnit = Instantiate(unitToSpawn, new Vector3(-5, 1, -9), Quaternion.identity);
+            newUnit.transform.SetParent(allUnits.transform);
+            newUnit = modifiedUnit(newUnit);
+            newUnit.SetActive(true);
+            changeModeF();
+            Mana.timeStart -= 3;
+        }
     }
     public void SpawnUnitRight()
     {
-        GameObject newUnit = Instantiate(unitToSpawn, new Vector3(5, 1, -9), Quaternion.identity);
-        newUnit.transform.SetParent(allUnits.transform);
-        newUnit = modifiedUnit(newUnit);
-        newUnit.SetActive(true);
-        changeModeF();
+        if (Mana.timeStart >= 3)
+        {
+            GameObject newUnit = Instantiate(unitToSpawn, new Vector3(5, 1, -9), Quaternion.identity);
+            newUnit.transform.SetParent(allUnits.transform);
+            newUnit = modifiedUnit(newUnit);
+            newUnit.SetActive(true);
+            changeModeF();
+            Mana.timeStart -= 3;
+        }
     }
     public void changeModeF()
     {
