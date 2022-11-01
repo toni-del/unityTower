@@ -56,13 +56,14 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AI.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Fight.cs" />
     <Compile Include="Assets\Scripts\LightRotator.cs" />
     <Compile Include="Assets\Scripts\CardDrag.cs" />
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
-    <Compile Include="Assets\Scripts\Mana.cs" />
     <Compile Include="Assets\Scripts\Stats.cs" />
-    <Compile Include="Assets\Scripts\AI.cs" />
+    <Compile Include="Assets\Scripts\Mana.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -17,7 +17,7 @@ public class Mana : MonoBehaviour
         {
             if (Convert.ToInt32(mana.GetComponent<Text>().text) != 10)
                 mana.GetComponent<Text>().text = Convert.ToString(Convert.ToInt32(mana.GetComponent<Text>().text) + 1);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
         }
     }
 }

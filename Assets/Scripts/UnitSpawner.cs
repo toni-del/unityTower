@@ -66,14 +66,14 @@ public class UnitSpawner : MonoBehaviour
                 modifUn.GetComponent<Stats>().damage = 1;
                 modifUn.GetComponent<Stats>().hp = 1;
                 modifUn.GetComponent<Stats>().speed = 1f;
-                modifUn.GetComponent<Stats>().cost = 1;
+                modifUn.GetComponent<Stats>().cost = 2;
                 break;
             case "Second Card":
                 modifUn.GetComponent<MeshRenderer>().material = materials[1];
                 modifUn.GetComponent<Stats>().damage = 1;
                 modifUn.GetComponent<Stats>().hp = 2;
                 modifUn.GetComponent<Stats>().speed = 1f;
-                modifUn.GetComponent<Stats>().cost = 2;
+                modifUn.GetComponent<Stats>().cost = 3;
                 break;
             case "Third Card":
                 Debug.LogWarning("sdag");
@@ -81,14 +81,14 @@ public class UnitSpawner : MonoBehaviour
                 modifUn.GetComponent<Stats>().damage = 2;
                 modifUn.GetComponent<Stats>().hp = 1;
                 modifUn.GetComponent<Stats>().speed = 1f;
-                modifUn.GetComponent<Stats>().cost = 2;
+                modifUn.GetComponent<Stats>().cost = 3;
                 break;
             case "Fourth Card":
                 modifUn.GetComponent<MeshRenderer>().material = materials[3];
                 modifUn.GetComponent<Stats>().damage = 1;
                 modifUn.GetComponent<Stats>().hp = 1;
                 modifUn.GetComponent<Stats>().speed = 2f;
-                modifUn.GetComponent<Stats>().cost = 2;
+                modifUn.GetComponent<Stats>().cost = 3;
                 break;
         }
         return modifUn;
