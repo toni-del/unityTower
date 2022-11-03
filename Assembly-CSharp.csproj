@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\Stats.cs" />
     <Compile Include="Assets\Scripts\Mana.cs" />
+    <Compile Include="Assets\Scripts\Coombination.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
