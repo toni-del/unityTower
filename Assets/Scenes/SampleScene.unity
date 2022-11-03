@@ -439,7 +439,6 @@ GameObject:
   - component: {fileID: 420542373}
   - component: {fileID: 420542372}
   - component: {fileID: 420542377}
-  - component: {fileID: 420542376}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Ally
@@ -525,22 +524,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &420542376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420542371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba5f7484fd88af54cb4107eddd7b2066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  hp: 0
-  speed: 0
-  cost: 0
 --- !u!114 &420542377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,6 +540,8 @@ MonoBehaviour:
   hp: 0
   speed: 0
   cost: 0
+  pushing: 0
+  frames: 0
 --- !u!1 &533881774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1893,7 @@ MonoBehaviour:
   allyTowerR: {fileID: 0}
   enemyTowerL: {fileID: 0}
   enemyTowerR: {fileID: 0}
+  totFram: 240
 --- !u!4 &1233657379
 Transform:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public GameObject allUnits;
     public GameObject allyTowerL, allyTowerR, enemyTowerL, enemyTowerR;
+    public int totFram;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +21,38 @@ public class Movement : MonoBehaviour
             GameObject unit = allUnits.transform.GetChild(i).gameObject;
             if (unit.tag == "Ally")
             {
+                if (!unit.GetComponent<Stats>().pushing)
                 unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z + unit.GetComponent<Stats>().speed * Time.deltaTime);
+                else
+                {
+                    if (unit.GetComponent<Stats>().frames != totFram)
+                    {
+                        unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - unit.GetComponent<Stats>().speed * 1.5f * Time.deltaTime);
+                        unit.GetComponent<Stats>().frames++;
+                    } else
+                    {
+                        unit.GetComponent <Stats>().pushing = false;
+                    }
+                }
                 //if (enemyTowerL != null)
                 //    if (unit.transform.position.z > 9) Destroy(enemyTowerL);
 
             } else
             {
-                unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - unit.GetComponent<Stats>().speed * Time.deltaTime);
+                if (!unit.GetComponent<Stats>().pushing)
+                    unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - unit.GetComponent<Stats>().speed * Time.deltaTime);
+                else
+                {
+                    if (unit.GetComponent<Stats>().frames != totFram)
+                    {
+                        unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z + unit.GetComponent<Stats>().speed * 1.5f * Time.deltaTime);
+                        unit.GetComponent<Stats>().frames++;
+                    }
+                    else
+                    {
+                        unit.GetComponent<Stats>().pushing = false;
+                    }
+                }
             }
         }
          

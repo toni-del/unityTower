@@ -49,10 +49,37 @@ public class Fight : MonoBehaviour
             {
                 if (near(allyUnits[i], enemyUnits[j]))
                 {
+
                     //allyPush = StartCoroutine(pushing(allyUnits[i], false));
                     //enemyPush = StartCoroutine(pushing(enemyUnits[i], true));
-                    allyUnits[i].transform.position = new Vector3(allyUnits[i].transform.position.x, allyUnits[i].transform.position.y, allyUnits[i].transform.position.z + -2f );
-                    enemyUnits[i].transform.position = new Vector3(enemyUnits[i].transform.position.x, enemyUnits[i].transform.position.y, enemyUnits[i].transform.position.z + 2f );
+                    //allyUnits[i].transform.position = new Vector3(allyUnits[i].transform.position.x, allyUnits[i].transform.position.y, allyUnits[i].transform.position.z + -2f);
+                    //enemyUnits[j].transform.position = new Vector3(enemyUnits[j].transform.position.x, enemyUnits[j].transform.position.y, enemyUnits[j].transform.position.z + 2f);
+                    if (!enemyUnits[j].GetComponent<Stats>().pushing)
+                        allyUnits[i].GetComponent<Stats>().hp -= enemyUnits[j].GetComponent<Stats>().damage;
+                    if (!allyUnits[i].GetComponent<Stats>().pushing)
+                        enemyUnits[j].GetComponent<Stats>().hp -= allyUnits[i].GetComponent<Stats>().damage;
+                    allyUnits[i].GetComponent<Stats>().pushing = true;
+                    allyUnits[i].GetComponent<Stats>().frames = 0;
+                    enemyUnits[j].GetComponent<Stats>().pushing = true;
+                    enemyUnits[j].GetComponent<Stats>().frames = 0;
+                    //Debug.Log("HPB");
+                    //Debug.Log(allyUnits[i].GetComponent<Stats>().hp);
+                    
+                    //Debug.Log("HP");
+                    //Debug.Log(allyUnits[i].GetComponent<Stats>().hp);
+                    //Debug.Log("DMG");
+                    //Debug.Log(enemyUnits[j].GetComponent<Stats>().damage);
+                    
+                    if (allyUnits[i].GetComponent<Stats>().hp <= 0)
+                    {
+                        Destroy(allyUnits[i]);
+                        allyCount--;
+                    }
+                    if (enemyUnits[j].GetComponent<Stats>().hp <= 0)
+                    {
+                        Destroy(enemyUnits[j]);
+                        enemyCount--;
+                    }
                 }
             }
         }
@@ -73,9 +100,10 @@ public class Fight : MonoBehaviour
     //    while (i < 1f)
     //    {
     //        i += 0.5f;
-    //        unitToPush.transform.position = new Vector3(unitToPush.transform.position.x, unitToPush.transform.position.y, unitToPush.transform.position.z + -3 * Time.deltaTime);
+    //        if (front)
+    //            unitToPush.transform.position = new Vector3(unitToPush.transform.position.x, unitToPush.transform.position.y, unitToPush.transform.position.z + -1 * Time.deltaTime);
+    //        else unitToPush.transform.position = new Vector3(unitToPush.transform.position.x, unitToPush.transform.position.y, unitToPush.transform.position.z + 1 * Time.deltaTime);
     //        yield return new WaitForSeconds(0.1f);
     //    }
-        
     //}
 }
