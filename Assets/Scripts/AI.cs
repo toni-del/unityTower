@@ -18,7 +18,7 @@ public class AI : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(manaCount);
+            
             if (manaCount != 10)
                 manaCount++;
             yield return new WaitForSeconds(2);
@@ -31,12 +31,15 @@ public class AI : MonoBehaviour
             if (UnityEngine.Random.Range(1, 11) <= manaCount)
             {
 
-                string[] unitNames = new string[4];
-                unitNames[0] = "First Card";
-                unitNames[1] = "Second Card";
-                unitNames[2] = "Third Card";
-                unitNames[3] = "Fourth Card";
-                chosenUnit = unitNames[UnityEngine.Random.Range(0, 4)];
+                string[] unitNames = new string[7];
+                unitNames[0] = "water";
+                unitNames[1] = "earth";
+                unitNames[2] = "fire";
+                unitNames[3] = "wind";
+                unitNames[4] = "swamp";
+                unitNames[5] = "steam";
+                unitNames[6] = "lava";
+                chosenUnit = unitNames[UnityEngine.Random.Range(0, 7)];
                 if (UnityEngine.Random.Range(0, 2) == 1) SpawnUnitLeft();
                 else SpawnUnitRight();
             }
@@ -79,35 +82,57 @@ public class AI : MonoBehaviour
     {
         switch (chosenUnit)
         {
-            case "First Card":
-                Debug.LogWarning("fasf");
+            case "water":
                 modifUn.GetComponent<MeshRenderer>().material = materials[0];
                 modifUn.GetComponent<Stats>().damage = 1;
                 modifUn.GetComponent<Stats>().hp = 1;
                 modifUn.GetComponent<Stats>().speed = 1f;
                 modifUn.GetComponent<Stats>().cost = 2;
                 break;
-            case "Second Card":
+            case "earth":
                 modifUn.GetComponent<MeshRenderer>().material = materials[1];
                 modifUn.GetComponent<Stats>().damage = 1;
                 modifUn.GetComponent<Stats>().hp = 2;
                 modifUn.GetComponent<Stats>().speed = 1f;
                 modifUn.GetComponent<Stats>().cost = 3;
                 break;
-            case "Third Card":
-                Debug.LogWarning("sdag");
+            case "fire":
                 modifUn.GetComponent<MeshRenderer>().material = materials[2];
                 modifUn.GetComponent<Stats>().damage = 2;
                 modifUn.GetComponent<Stats>().hp = 1;
                 modifUn.GetComponent<Stats>().speed = 1f;
                 modifUn.GetComponent<Stats>().cost = 3;
                 break;
-            case "Fourth Card":
+            case "wind":
                 modifUn.GetComponent<MeshRenderer>().material = materials[3];
                 modifUn.GetComponent<Stats>().damage = 1;
                 modifUn.GetComponent<Stats>().hp = 1;
                 modifUn.GetComponent<Stats>().speed = 2f;
                 modifUn.GetComponent<Stats>().cost = 3;
+                break;
+            case "swamp":
+                modifUn.GetComponent<MeshRenderer>().material = materials[4];
+                modifUn.GetComponent<Stats>().damage = 2;
+                modifUn.GetComponent<Stats>().hp = 3;
+                modifUn.GetComponent<Stats>().speed = 2f;
+                modifUn.GetComponent<Stats>().cost = 5;
+                modifUn.GetComponent<Stats>().ability = "swamp";
+                break;
+            case "steam":
+                modifUn.GetComponent<MeshRenderer>().material = materials[5];
+                modifUn.GetComponent<Stats>().damage = 2;
+                modifUn.GetComponent<Stats>().hp = 2;
+                modifUn.GetComponent<Stats>().speed = 3f;
+                modifUn.GetComponent<Stats>().cost = 5;
+                modifUn.GetComponent<Stats>().skip = 100;
+                break;
+            case "lava":
+                modifUn.GetComponent<MeshRenderer>().material = materials[6];
+                modifUn.GetComponent<Stats>().damage = 3;
+                modifUn.GetComponent<Stats>().hp = 3;
+                modifUn.GetComponent<Stats>().speed = 2f;
+                modifUn.GetComponent<Stats>().cost = 6;
+                modifUn.GetComponent<Stats>().ability = "lava";
                 break;
         }
         return modifUn;

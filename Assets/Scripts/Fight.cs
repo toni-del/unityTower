@@ -6,8 +6,13 @@ using UnityEngine;
 public class Fight : MonoBehaviour
 {
     public GameObject allUnits;
+    public GameObject unitToSpawn;
+    public Material fire;
     UnityEngine.Coroutine allyPush;
     UnityEngine.Coroutine enemyPush;
+    int allyCount = 0, enemyCount, allyI = 0, enemyI = 0;
+    GameObject[] allyUnits = new GameObject[1000];
+    GameObject[] enemyUnits = new GameObject[1000];
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +22,15 @@ public class Fight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int allyCount = 0, enemyCount, allyI = 0, enemyI = 0;
+        allyI = 0;
+        enemyI = 0;
+        allyCount = 0;
         for (int i = 0; i < allUnits.transform.childCount; i++)
         {
             GameObject unit = allUnits.transform.GetChild(i).gameObject;
             if (unit.tag == "Ally") allyCount++;
         }
         enemyCount = allUnits.transform.childCount - allyCount;
-        GameObject[] allyUnits = new GameObject[allyCount];
-        GameObject[] enemyUnits = new GameObject[enemyCount];
         for (int i = 0; i < allUnits.transform.childCount; i++)
         {
             GameObject unit = allUnits.transform.GetChild(i).gameObject;
@@ -72,11 +77,40 @@ public class Fight : MonoBehaviour
                     
                     if (allyUnits[i].GetComponent<Stats>().hp <= 0)
                     {
-                        Destroy(allyUnits[i]);
+                        if (allyUnits[i].GetComponent<Stats>().ability == "swamp")
+                        {
+                            StartCoroutine(SwampDeathratle());
+                            
+                        } else if (allyUnits[i].GetComponent<Stats>().ability == "lava")
+                        {
+                            GameObject newUnit = Instantiate(unitToSpawn, allyUnits[i].transform.position, Quaternion.identity);
+                            newUnit.transform.SetParent(allUnits.transform);
+                            newUnit = modifiedUnit(newUnit);
+                           
+                                newUnit.SetActive(true);
+                           
+                           
+                        }
+                            Destroy(allyUnits[i]);
                         allyCount--;
                     }
                     if (enemyUnits[j].GetComponent<Stats>().hp <= 0)
                     {
+                        if (enemyUnits[j].GetComponent<Stats>().ability == "swamp")
+                        {
+                            StartCoroutine(SwampDeathratleEnemy());
+
+                        }
+                        else if (enemyUnits[j].GetComponent<Stats>().ability == "lava")
+                        {
+                            GameObject newUnit = Instantiate(unitToSpawn, enemyUnits[j].transform.position, Quaternion.identity);
+                            newUnit.transform.SetParent(allUnits.transform);
+                            newUnit = modifiedUnit(newUnit);
+                            newUnit.tag = "Enemy";
+                            newUnit.SetActive(true);
+
+
+                        }
                         Destroy(enemyUnits[j]);
                         enemyCount--;
                     }
@@ -86,13 +120,20 @@ public class Fight : MonoBehaviour
     }
     public bool near(GameObject allyUnit, GameObject enemyUnit)
     {
-        if ((Math.Abs(allyUnit.transform.position.z - enemyUnit.transform.position.z) < 0.5) && (allyUnit.transform.position.x == enemyUnit.transform.position.x))
-        {
-            return true;
-        } else
-        {
-            return false;
+        
+            if ((Math.Abs(allyUnit.transform.position.z - enemyUnit.transform.position.z) < 0.5) && (allyUnit.transform.position.x == enemyUnit.transform.position.x))
+            {
+            if (allyUnit.GetComponent<Stats>().skip-- <= 0 && enemyUnit.GetComponent<Stats>().skip-- <= 0)
+            {
+                return true;
+            }
+            else return false;
         }
+            else
+            {
+                return false;
+            }
+        
     }
     //IEnumerator pushing(GameObject unitToPush, bool front)
     //{
@@ -106,4 +147,50 @@ public class Fight : MonoBehaviour
     //        yield return new WaitForSeconds(0.1f);
     //    }
     //}
+    public IEnumerator SwampDeathratle()
+    {
+        for (int i = 0; i < enemyCount; i++)
+        {
+            enemyUnits[i].GetComponent<Stats>().speed = 0;
+
+        }
+        yield return new WaitForSeconds(3);
+        ReturnSpeed();
+    }
+    public void ReturnSpeed()
+    {
+        for (int i = 0; i < enemyCount; i++)
+        {
+            enemyUnits[i].GetComponent<Stats>().speed = 1;
+
+        }
+    }
+    public IEnumerator SwampDeathratleEnemy()
+    {
+        for (int i = 0; i < allyCount; i++)
+        {
+            allyUnits[i].GetComponent<Stats>().speed = 0;
+
+        }
+        yield return new WaitForSeconds(3);
+        ReturnSpeedEnemy();
+    }
+    public void ReturnSpeedEnemy()
+    {
+        for (int i = 0; i < allyCount; i++)
+        {
+            allyUnits[i].GetComponent<Stats>().speed = 1;
+
+        }
+    }
+    public GameObject modifiedUnit(GameObject modifUn)
+    {
+                modifUn.GetComponent<MeshRenderer>().material = fire;
+                modifUn.GetComponent<Stats>().damage = 2;
+                modifUn.GetComponent<Stats>().hp = 1;
+                modifUn.GetComponent<Stats>().speed = 1f;
+                modifUn.GetComponent<Stats>().cost = 3;
+                
+        return modifUn;
+    }
 }

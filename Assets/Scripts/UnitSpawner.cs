@@ -11,7 +11,7 @@ public class UnitSpawner : MonoBehaviour
     public GameObject arrowLeft, arrowRight, comb;
     public GameObject coomvinatedCard;
     public GameObject mana;
-    public Material[] materials = new Material[5];
+    public Material[] materials = new Material[7];
     public string element;
     public bool coombinationActive = false;
 
@@ -63,10 +63,11 @@ public class UnitSpawner : MonoBehaviour
         arrowLeft.SetActive(false);
         arrowRight.SetActive(false);
         coomvinatedCard.SetActive(false);
+        comb.SetActive(false);
     }
     public GameObject modifiedUnit(GameObject modifUn)
     {
-        Debug.Log(element);
+        
         switch (element)
         {
             case "water":
@@ -84,7 +85,6 @@ public class UnitSpawner : MonoBehaviour
                 modifUn.GetComponent<Stats>().cost = 3;
                 break;
             case "fire":
-                Debug.LogWarning("sdag");
                 modifUn.GetComponent<MeshRenderer>().material = materials[2];
                 modifUn.GetComponent<Stats>().damage = 2;
                 modifUn.GetComponent<Stats>().hp = 1;
@@ -104,6 +104,23 @@ public class UnitSpawner : MonoBehaviour
                 modifUn.GetComponent<Stats>().hp = 3;
                 modifUn.GetComponent<Stats>().speed = 2f;
                 modifUn.GetComponent<Stats>().cost = 5;
+                modifUn.GetComponent<Stats>().ability = "swamp";
+                break;
+            case "steam":
+                modifUn.GetComponent<MeshRenderer>().material = materials[5];
+                modifUn.GetComponent<Stats>().damage = 2;
+                modifUn.GetComponent<Stats>().hp = 2;
+                modifUn.GetComponent<Stats>().speed = 3f;
+                modifUn.GetComponent<Stats>().cost = 5;
+                modifUn.GetComponent<Stats>().skip = 100;
+                break;
+            case "lava":
+                modifUn.GetComponent<MeshRenderer>().material = materials[6];
+                modifUn.GetComponent<Stats>().damage = 3;
+                modifUn.GetComponent<Stats>().hp = 3;
+                modifUn.GetComponent<Stats>().speed = 2f;
+                modifUn.GetComponent<Stats>().cost = 6;
+                modifUn.GetComponent <Stats>().ability = "lava";
                 break;
         }
         return modifUn;

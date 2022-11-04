@@ -61,10 +61,10 @@
     <Compile Include="Assets\Scripts\Fight.cs" />
     <Compile Include="Assets\Scripts\LightRotator.cs" />
     <Compile Include="Assets\Scripts\CardDrag.cs" />
+    <Compile Include="Assets\Scripts\Coombination.cs" />
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\Stats.cs" />
     <Compile Include="Assets\Scripts\Mana.cs" />
-    <Compile Include="Assets\Scripts\Coombination.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

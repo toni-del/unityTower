@@ -540,10 +540,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   hp: 0
-  speed: 0
-  cost: 0
-  pushing: 0
   frames: 0
+  cost: 0
+  speed: 0
+  pushing: 0
+  skip: 0
+  ability: 
+  allUnits: {fileID: 1618475407}
 --- !u!1 &533881774
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +651,7 @@ MonoBehaviour:
   allUnits: {fileID: 1618475407}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
-  comb: {fileID: 0}
+  comb: {fileID: 1779243856}
   coomvinatedCard: {fileID: 967193093}
   mana: {fileID: 1510700016}
   materials:
@@ -657,6 +660,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
   - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
   - {fileID: 2100000, guid: 6a8230aec6046be46ac36fbdf16138eb, type: 2}
+  - {fileID: 2100000, guid: beee2fdac6c402f4a9bf821d353ddc58, type: 2}
+  - {fileID: 2100000, guid: 9b7a299b0df875e48b412c2251ebbd7d, type: 2}
   element: 
   coombinationActive: 0
 --- !u!114 &679658549
@@ -1083,7 +1088,7 @@ MonoBehaviour:
   allUnits: {fileID: 1618475407}
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
-  comb: {fileID: 0}
+  comb: {fileID: 1779243856}
   coomvinatedCard: {fileID: 967193093}
   mana: {fileID: 1510700016}
   materials:
@@ -1092,6 +1097,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
   - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
   - {fileID: 2100000, guid: 6a8230aec6046be46ac36fbdf16138eb, type: 2}
+  - {fileID: 2100000, guid: beee2fdac6c402f4a9bf821d353ddc58, type: 2}
+  - {fileID: 2100000, guid: 9b7a299b0df875e48b412c2251ebbd7d, type: 2}
   element: 
   coombinationActive: 0
 --- !u!114 &816969189
@@ -2047,7 +2054,6 @@ GameObject:
   - component: {fileID: 1233657381}
   - component: {fileID: 1233657382}
   - component: {fileID: 1233657384}
-  - component: {fileID: 1233657383}
   m_Layer: 0
   m_Name: Game Conroller
   m_TagString: Untagged
@@ -2133,19 +2139,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1416eaf3f15600b4fa4397351e9e684d, type: 2}
   - {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
   - {fileID: 2100000, guid: 041f3765c23bc134882a6280ab223eb5, type: 2}
---- !u!114 &1233657383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233657377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe1f6f30d3c4824eaadd02c9e732b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allUnits: {fileID: 1618475407}
+  - {fileID: 2100000, guid: 6a8230aec6046be46ac36fbdf16138eb, type: 2}
+  - {fileID: 2100000, guid: beee2fdac6c402f4a9bf821d353ddc58, type: 2}
+  - {fileID: 2100000, guid: 9b7a299b0df875e48b412c2251ebbd7d, type: 2}
 --- !u!114 &1233657384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,6 +2155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allUnits: {fileID: 1618475407}
+  unitToSpawn: {fileID: 420542371}
+  fire: {fileID: 2100000, guid: 3fc333ba3caff074c97555622fc4a8d5, type: 2}
 --- !u!1001 &1395489098
 PrefabInstance:
   m_ObjectHideFlags: 0
