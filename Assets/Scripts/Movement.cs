@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -34,8 +35,32 @@ public class Movement : MonoBehaviour
                         unit.GetComponent <Stats>().pushing = false;
                     }
                 }
-                //if (enemyTowerL != null)
-                //    if (unit.transform.position.z > 9) Destroy(enemyTowerL);
+                    if (unit.transform.position.z > 9)
+                        if (unit.transform.position.x < 0)
+                            if (enemyTowerL.tag != "Broken")
+                        {
+                            enemyTowerL.tag = "Broken";
+                            Destroy(unit);
+                        }
+                                
+                            else
+                            {
+                                Destroy(enemyTowerL);
+                                Destroy(unit);
+                            }
+                    if (unit.transform.position.z > 9)
+                        if (unit.transform.position.x > 0)
+                            if (enemyTowerR.tag != "Broken")
+                        {
+                            enemyTowerR.tag = "Broken";
+                            Destroy(unit);
+                        }
+                                
+                            else
+                            {
+                                Destroy(enemyTowerR);
+                                Destroy(unit);
+                            }
 
             } else
             {
@@ -53,6 +78,32 @@ public class Movement : MonoBehaviour
                         unit.GetComponent<Stats>().pushing = false;
                     }
                 }
+                if (unit.transform.position.z < -9)
+                    if (unit.transform.position.x < 0)
+                        if (allyTowerL.tag != "Broken")
+                        {
+                            allyTowerL.tag = "Broken";
+                            Destroy(unit);
+                        }
+                            
+                        else
+                        {
+                            Destroy(allyTowerL);
+                            Destroy(unit);
+                        }
+                if (unit.transform.position.z < -9)
+                    if (unit.transform.position.x > 0)
+                        if (allyTowerR.tag != "Broken")
+                        {
+                            allyTowerR.tag = "Broken";
+                            Destroy(unit);
+                        }
+                            
+                        else
+                        {
+                            Destroy(allyTowerR);
+                            Destroy(unit);
+                        }
             }
         }
          
