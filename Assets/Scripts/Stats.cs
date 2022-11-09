@@ -6,8 +6,8 @@ public class Stats : MonoBehaviour
 {
     public int damage;
     public int hp;
-    public int frames;
     public int cost;
+    public float frames;
     public float speed;
     public bool pushing = false;
     public int skip = 0;

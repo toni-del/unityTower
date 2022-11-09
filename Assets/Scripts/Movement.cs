@@ -26,10 +26,10 @@ public class Movement : MonoBehaviour
                 unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z + unit.GetComponent<Stats>().speed * Time.deltaTime);
                 else
                 {
-                    if (unit.GetComponent<Stats>().frames != totFram)
+                    if (unit.GetComponent<Stats>().frames < totFram)
                     {
                         unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - unit.GetComponent<Stats>().speed * 1.5f * Time.deltaTime);
-                        unit.GetComponent<Stats>().frames++;
+                        unit.GetComponent<Stats>().frames+= Time.deltaTime;
                     } else
                     {
                         unit.GetComponent <Stats>().pushing = false;
@@ -68,10 +68,10 @@ public class Movement : MonoBehaviour
                     unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z - unit.GetComponent<Stats>().speed * Time.deltaTime);
                 else
                 {
-                    if (unit.GetComponent<Stats>().frames != totFram)
+                    if (unit.GetComponent<Stats>().frames < totFram)
                     {
                         unit.transform.position = new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z + unit.GetComponent<Stats>().speed * 1.5f * Time.deltaTime);
-                        unit.GetComponent<Stats>().frames++;
+                        unit.GetComponent<Stats>().frames+= Time.deltaTime;
                     }
                     else
                     {

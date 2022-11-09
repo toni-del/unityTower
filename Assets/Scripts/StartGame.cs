@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
 
-    public void RunGame()
+    public void RunScene(int sceneNumber)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneNumber);
     }
 }
