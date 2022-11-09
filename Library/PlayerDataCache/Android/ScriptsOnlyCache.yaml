@@ -67,7 +67,7 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: StartGame
-    methodName: RunGame
+    methodName: RunScene
   - assembly: Assembly-CSharp
     fullTypeName: UnitSpawner
     methodName: SpawnUnitLeft
@@ -102,11 +102,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -119,13 +129,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1546}
     - Class: 114
+      Script: {instanceID: 1596}
+    - Class: 114
       Script: {instanceID: 2218}
+    - Class: 114
+      Script: {instanceID: 2654}
     - Class: 114
       Script: {instanceID: 2882}
     - Class: 114
       Script: {instanceID: 3186}
     - Class: 114
+      Script: {instanceID: 3394}
+    - Class: 114
+      Script: {instanceID: 3910}
+    - Class: 114
       Script: {instanceID: 4156}
+    - Class: 114
+      Script: {instanceID: 4224}
     - Class: 114
       Script: {instanceID: 4270}
     - Class: 114
@@ -138,9 +158,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6102}
     - Class: 114
       Script: {instanceID: 6108}
+    - Class: 114
+      Script: {instanceID: 6450}
+    - Class: 114
+      Script: {instanceID: 7968}
+    - Class: 114
+      Script: {instanceID: 8292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
