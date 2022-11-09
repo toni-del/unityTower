@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
   comb: {fileID: 1779243856}
-  coomvinatedCard: {fileID: 0}
+  coomvinatedCard: {fileID: 967193093}
   mana: {fileID: 1510700016}
   materials:
   - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
@@ -1512,7 +1513,7 @@ MonoBehaviour:
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
   comb: {fileID: 1779243856}
-  coomvinatedCard: {fileID: 0}
+  coomvinatedCard: {fileID: 967193093}
   mana: {fileID: 1510700016}
   materials:
   - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
@@ -1875,7 +1876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.653683, g: 0.25973654, b: 0.7169812, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2141,7 +2142,7 @@ MonoBehaviour:
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
   comb: {fileID: 1779243856}
-  coomvinatedCard: {fileID: 0}
+  coomvinatedCard: {fileID: 967193093}
   mana: {fileID: 1510700016}
   materials:
   - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}
@@ -2612,6 +2613,8 @@ MonoBehaviour:
   enemyTowerL: {fileID: 1306599098}
   enemyTowerR: {fileID: 1445799334}
   totFram: 2
+  allyHP: 5
+  enemyHP: 5
 --- !u!4 &1233657379
 Transform:
   m_ObjectHideFlags: 0
@@ -3020,6 +3023,10 @@ MonoBehaviour:
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
   card: {fileID: 967193093}
+  cardsImage:
+  - {fileID: 21300000, guid: 5a7dd4d4b377b914c99771d191c01274, type: 3}
+  - {fileID: 21300000, guid: 557c161b71efde345990bb07f078f89c, type: 3}
+  - {fileID: 21300000, guid: fa4eff4ffe2eab744bb4d483e208a714, type: 3}
   firstElement: 
   secondElement: 
   element: 
@@ -3359,7 +3366,7 @@ MonoBehaviour:
   arrowLeft: {fileID: 679658547}
   arrowRight: {fileID: 816969186}
   comb: {fileID: 1779243856}
-  coomvinatedCard: {fileID: 0}
+  coomvinatedCard: {fileID: 967193093}
   mana: {fileID: 1510700016}
   materials:
   - {fileID: 2100000, guid: 4ca8534d72038594f98dead734e31377, type: 2}

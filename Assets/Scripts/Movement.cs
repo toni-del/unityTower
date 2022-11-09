@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     public GameObject allUnits;
     public GameObject allyTowerL, allyTowerR, enemyTowerL, enemyTowerR;
-    public int totFram;
+    public int totFram, allyHP, enemyHP;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,30 +37,23 @@ public class Movement : MonoBehaviour
                 }
                     if (unit.transform.position.z > 9)
                         if (unit.transform.position.x < 0)
-                            if (enemyTowerL.tag != "Broken")
+                    {
+                        enemyHP--;
+                        if (enemyHP == 0)
                         {
-                            enemyTowerL.tag = "Broken";
-                            Destroy(unit);
+                            //здесь выигрыш
                         }
-                                
-                            else
-                            {
-                                Destroy(enemyTowerL);
-                                Destroy(unit);
-                            }
+                    }
                     if (unit.transform.position.z > 9)
                         if (unit.transform.position.x > 0)
-                            if (enemyTowerR.tag != "Broken")
+                    {
+                        enemyHP--;
+                        if (enemyHP == 0)
                         {
-                            enemyTowerR.tag = "Broken";
-                            Destroy(unit);
+                            //здесь выигрыш
                         }
-                                
-                            else
-                            {
-                                Destroy(enemyTowerR);
-                                Destroy(unit);
-                            }
+                    }
+                            
 
             } else
             {
@@ -80,30 +73,22 @@ public class Movement : MonoBehaviour
                 }
                 if (unit.transform.position.z < -9)
                     if (unit.transform.position.x < 0)
-                        if (allyTowerL.tag != "Broken")
-                        {
-                            allyTowerL.tag = "Broken";
-                            Destroy(unit);
-                        }
-                            
-                        else
-                        {
-                            Destroy(allyTowerL);
-                            Destroy(unit);
-                        }
+                    {
+                            allyHP--;
+                            if (allyHP == 0)
+                            {
+                                //здесь проигрыш
+                            }
+                    }
                 if (unit.transform.position.z < -9)
                     if (unit.transform.position.x > 0)
-                        if (allyTowerR.tag != "Broken")
+                    {
+                        allyHP--;
+                        if (allyHP == 0)
                         {
-                            allyTowerR.tag = "Broken";
-                            Destroy(unit);
+                            //здесь проигрыш
                         }
-                            
-                        else
-                        {
-                            Destroy(allyTowerR);
-                            Destroy(unit);
-                        }
+                    }
             }
         }
          

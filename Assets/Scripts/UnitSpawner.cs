@@ -23,6 +23,7 @@ public class UnitSpawner : MonoBehaviour
             arrowLeft.SetActive(true);
             arrowRight.GetComponent<UnitSpawner>().element = element;
             arrowRight.SetActive(true);
+            coomvinatedCard.SetActive(false);
             comb.GetComponent<Coombination>().element = element;
             comb.SetActive(true);
         //}
