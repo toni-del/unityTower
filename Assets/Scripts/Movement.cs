@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     public GameObject allUnits;
     public GameObject allyTowerL, allyTowerR, enemyTowerL, enemyTowerR;
+    public GameObject allyHpText, enemyHpText;
     public int totFram, allyHP, enemyHP;
     // Start is called before the first frame update
     void Start()
@@ -36,23 +39,15 @@ public class Movement : MonoBehaviour
                     }
                 }
                     if (unit.transform.position.z > 9)
-                        if (unit.transform.position.x < 0)
+                {
+                    enemyHP-= unit.GetComponent<Stats>().damage;
+                    enemyHpText.GetComponent<Text>().text = Convert.ToString(enemyHP);
+                    Destroy(unit);
+                    if (enemyHP <= 0)
                     {
-                        enemyHP--;
-                        if (enemyHP == 0)
-                        {
-                            SceneManager.LoadScene(4);
-                        }
+                        SceneManager.LoadScene(4);
                     }
-                    if (unit.transform.position.z > 9)
-                        if (unit.transform.position.x > 0)
-                    {
-                        enemyHP--;
-                        if (enemyHP == 0)
-                        {
-                            SceneManager.LoadScene(4);
-                        }
-                    }
+                }
                             
 
             } else
@@ -72,23 +67,15 @@ public class Movement : MonoBehaviour
                     }
                 }
                 if (unit.transform.position.z < -9)
-                    if (unit.transform.position.x < 0)
+                {
+                    allyHP -= unit.GetComponent<Stats>().damage;
+                    allyHpText.GetComponent<Text>().text = Convert.ToString(allyHP);
+                    Destroy(unit);
+                    if (allyHP <= 0)
                     {
-                            allyHP--;
-                            if (allyHP == 0)
-                            {
-                            SceneManager.LoadScene(3);
-                        }
+                        SceneManager.LoadScene(3);
                     }
-                if (unit.transform.position.z < -9)
-                    if (unit.transform.position.x > 0)
-                    {
-                        allyHP--;
-                        if (allyHP == 0)
-                        {
-                            SceneManager.LoadScene(3);
-                        }
-                    }
+                }
             }
         }
          
