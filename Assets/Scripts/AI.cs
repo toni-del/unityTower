@@ -21,7 +21,7 @@ public class AI : MonoBehaviour
             
             if (manaCount != 10)
                 manaCount++;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
         }
     }
     IEnumerator spawn()

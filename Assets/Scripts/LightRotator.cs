@@ -7,6 +7,6 @@ public class LightRotator : MonoBehaviour
     public GameObject light;
     void Update()
     {
-        light.transform.Rotate(5f * Time.deltaTime, 0, 0); 
+        light.transform.Rotate(1f * Time.deltaTime, 0, 0); 
     }
 }

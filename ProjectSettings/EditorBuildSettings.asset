@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CardsInfo.unity
     guid: c27869f88b5466d41b90f8ecb6edd066
+  - enabled: 1
+    path: Assets/Scenes/EndGameLose.unity
+    guid: c88aaaf963cc862459c1f40ada878472
+  - enabled: 1
+    path: Assets/Scenes/EndGameWIN.unity
+    guid: f9bb038d2d754d245b91ba3d186a7971
   m_configObjects: {}

@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
                         enemyHP--;
                         if (enemyHP == 0)
                         {
-                            //здесь выигрыш
+                            SceneManager.LoadScene(4);
                         }
                     }
                     if (unit.transform.position.z > 9)
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
                         enemyHP--;
                         if (enemyHP == 0)
                         {
-                            //здесь выигрыш
+                            SceneManager.LoadScene(4);
                         }
                     }
                             
@@ -77,8 +77,8 @@ public class Movement : MonoBehaviour
                             allyHP--;
                             if (allyHP == 0)
                             {
-                                //здесь проигрыш
-                            }
+                            SceneManager.LoadScene(3);
+                        }
                     }
                 if (unit.transform.position.z < -9)
                     if (unit.transform.position.x > 0)
@@ -86,7 +86,7 @@ public class Movement : MonoBehaviour
                         allyHP--;
                         if (allyHP == 0)
                         {
-                            //здесь проигрыш
+                            SceneManager.LoadScene(3);
                         }
                     }
             }
