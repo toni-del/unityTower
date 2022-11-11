@@ -113,7 +113,7 @@ public class UnitSpawner : MonoBehaviour
                 modifUn.GetComponent<Stats>().hp = 2;
                 modifUn.GetComponent<Stats>().speed = 3f;
                 modifUn.GetComponent<Stats>().cost = 5;
-                modifUn.GetComponent<Stats>().skip = 100;
+                modifUn.GetComponent<Stats>().skip = 40;
                 break;
             case "lava":
                 modifUn.GetComponent<MeshRenderer>().material = materials[6];
