@@ -64,9 +64,9 @@ public class Fight : MonoBehaviour
                     if (!allyUnits[i].GetComponent<Stats>().pushing)
                         enemyUnits[j].GetComponent<Stats>().hp -= allyUnits[i].GetComponent<Stats>().damage;
                     allyUnits[i].GetComponent<Stats>().pushing = true;
-                    allyUnits[i].GetComponent<Stats>().frames = 0;
+                    allyUnits[i].GetComponent<Stats>().frames = 1;
                     enemyUnits[j].GetComponent<Stats>().pushing = true;
-                    enemyUnits[j].GetComponent<Stats>().frames = 0;
+                    enemyUnits[j].GetComponent<Stats>().frames = 1;
                     //Debug.Log("HPB");
                     //Debug.Log(allyUnits[i].GetComponent<Stats>().hp);
                     

@@ -49,6 +49,7 @@ public class UnitSpawner : MonoBehaviour
         GameObject newUnit = Instantiate(unitToSpawn, new Vector3(5, 1, -9), Quaternion.identity);
         newUnit.transform.SetParent(allUnits.transform);
         newUnit = modifiedUnit(newUnit);
+        newUnit.GetComponent<Stats>().frames = 300;
         if (newUnit.GetComponent<Stats>().cost <= Convert.ToInt32(mana.GetComponent<Text>().text))
         {
             mana.GetComponent<Text>().text = Convert.ToString(Convert.ToInt32(mana.GetComponent<Text>().text) - newUnit.GetComponent<Stats>().cost);
